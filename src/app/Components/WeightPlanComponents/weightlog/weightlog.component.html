@@ -1,0 +1,61 @@
+
+
+<button id="button1" >  <a [routerLink]="['/admin']">HOME</a></button>
+
+<div style="text-align:center;"  class="panel panel-primery"  >
+    <h2><u>WeightLog Details</u></h2><br>
+  <table border="10" style="margin:auto" class="table table-hover" >
+  <tr style="background-color:greenyellow;">
+
+            <td> Id</td> 
+            <td> Weight </td>
+            <td> Created_At </td>
+            <td> Updated_At </td>
+            <td> User Id </td>
+            <td> Update </td>
+            <td> Delete </td>
+
+  </tr>
+  <tr *ngFor="let p of weightLogs">
+    <td> {{p.id}} </td> 
+    <td> {{p.weight}} </td>
+    <td> {{p.created_At}} </td>
+    <td> {{p.updated_At}} </td>
+    <td> {{p.userId}} </td>
+    <td><button (click)="updateById(p)" class="btn btn-success">Update</button></td>
+    <td><button (click)="deleteWeightLog(p)" class="btn btn-danger"> Delete</button></td>
+</tr>
+  </table>
+  </div>
+  <br><br>
+  <div style="text-align: center;" class="conatainer" >
+    <form #frm="ngForm" class="alert alert-primary">
+    
+
+     ID : <input  #refid ="ngModel" type="text" pattern="[0-9]{1,3}" width="20" placeholder="id" required name="weightLog.id"  [(ngModel)]="weightLog.id"  class="form-control" /><br><br>
+      <div *ngIf="refid.invalid " class="alert alert-danger">id required ..(*note : id should be number only)</div>
+
+     Weight : <input #refweight ="ngModel" type="text" width="20" placeholder="weight" required name="weightLog.weight" [(ngModel)]="weightLog.weight" width="20" /><br><br>
+     <div *ngIf="refweight.invalid " class="alert alert-danger">weight required</div>
+
+     Created Date  : <input #refcd="ngModel" type="text" width="20" placeholder="dd-mm-yyyy" required name="weightLog.created_At" [(ngModel)]="weightLog.created_At" /><br><br>
+      <div *ngIf="refcd.invalid" class="alert alert-danger"> Please enter created date</div>
+
+      Updated Date  : <input #refd="ngModel" type="text" width="20" placeholder="dd-mm-yyyy" required name="weightLog.updated_At" [(ngModel)]="weightLog.updated_At" /><br><br>
+      <div *ngIf="refd.invalid" class="alert alert-danger">Please enter updated date</div>
+
+      UserId  : <input #reffd="ngModel" type="text" width="20" placeholder="UserId" required name="weightLog.userId" [(ngModel)]="weightLog.userId" /><br><br>
+      <div *ngIf="reffd.invalid" class="alert alert-danger">Please enter userid</div>
+  
+      <button (click)="addWeightLog()" class="btn btn-primary" >Add </button>&nbsp;&nbsp;
+      <!-- <button (click)="deleteWeightLog()" class="btn btn-primary"> Delete</button>&nbsp;&nbsp; -->
+      <button (click)="updateWeightLog()" class="btn btn-primary" >Update </button>&nbsp;&nbsp;
+      <button (click)="showAll()" class="btn btn-info">Show All </button>
+      <button (click)="findWeightLogById()" class="btn btn-success">Find By Id</button>&nbsp;
+  
+  
+  
+    <br><br><br><br><br>
+  
+  </form>
+  </div>

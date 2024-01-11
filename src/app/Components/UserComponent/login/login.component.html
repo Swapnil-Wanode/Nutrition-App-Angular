@@ -1,0 +1,64 @@
+
+
+
+
+
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://play-lh.googleusercontent.com/DYeS-KJf3oraygTDMEqdt2kLCHkgPcUm0COhXn9LU17Vv7pBt2A4JonnmkbmOHegv6Qx=w480-h960-rw"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+<form #loginform="ngForm" (ngSubmit)="loginUser()">
+  
+  <div class="col-lg-6 mb-5 mb-lg-0">
+    <h5 class="my-5 display-3 fw-bold ls-tight">
+    Nutrition <br />
+      <span class="text-primary">Application</span>
+    </h5>
+  </div>
+  <br>
+  <h3 >Login</h3>
+  <br>
+  <small class="text-danger">{{msg}}</small>
+
+  
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" class="form-control" placeholder="Enter Username" name="username"[(ngModel)]="user.userName" required #username="ngModel"
+      [class.is-invalid]="username.invalid && username.touched">
+      
+      <small class="text-danger" [class.d-none]="username.valid || username.untouched">Username is a required field</small>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" placeholder="Enter Password" name="password"[(ngModel)]="user.password" required #password="ngModel"
+      [class.is-invalid]="password.invalid && password.touched"
+      >
+      <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is a required field</small>
+
+      
+    </div>
+    <div class="form-group">
+      <label for="role">Role:</label>&nbsp;
+      <input type="radio"  name="user.role" value="User" [(ngModel)]="user.role" required #role="ngModel"
+      [class.is-invalid]="role.invalid && role.touched">Customer &nbsp;
+      <input type="radio"  name="user.role"value="Admin" [(ngModel)]="user.role" required #role="ngModel"
+      [class.is-invalid]="role.invalid && role.touched">Admin
+      <small class="text-danger" [class.d-none]="role.valid || role.untouched"> For customer role is 'User' </small>
+
+      
+    </div>
+  
+    <div class="checkbox">
+      <label><input type="checkbox"> Remember me</label>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <br>
+    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+      class="link-danger" [routerLink]="['/registration']" >Register</a></p>
+
+  </form>

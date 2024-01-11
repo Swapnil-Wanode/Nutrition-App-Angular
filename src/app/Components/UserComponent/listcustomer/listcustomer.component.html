@@ -1,0 +1,62 @@
+ 
+ To Edit table click on button<button id="button5" >  <a [routerLink]="['/customer']">Click</a></button><br><br>
+
+<div id="signout">
+  <button class="btn btn-success" (click)="signOut()">LogOut</button>
+</div>
+
+
+    <table border="2" class="table table-hover" >
+        <tr style="background-color: aqua;">
+          <td>CustomerID</td>
+          <td>FirstName</td>
+          <td>LastName</td>
+          <td>Email</td>
+          <td>DOB</td>
+          <td>U_ID</td>
+          <!-- <td>R_ID</td> -->
+          <td>Gender</td>
+          <td>photo</td>
+          <td>role</td>
+          <td>status</td>
+          <td>weight</td>
+          <td>height</td>
+          <td>diateryOrientation</td>
+          <td>intensity</td>
+          <td>goal</td>
+          <td>workOutTime</td>
+          <td>wakeUpTime</td>
+          <td>sleepTiem</td>
+          <td>medicalConditon</td>
+          <td>allergicTo</td>
+        </tr>
+        <tr *ngFor="let e of customers" style="background-color: thistle;">
+        
+          <td>{{e.id}}</td>
+          <td>{{e.firstName}}</td>
+          <td>{{e.lastName}}</td>
+          <td>{{e.email}}</td>
+          <td>{{e.dateOfBirth}}</td>
+          <td>{{e.u_id}}</td>
+          <!-- <td>{{e.r_id}}</td> -->
+          <td>{{e.gender}}</td>
+          <td>{{e.photo}}</td>
+          <td>{{e.role}}</td>
+          <td>{{e.status}}</td>
+          <td>{{e.weight}}</td>
+          <td>{{e.height}}</td>
+          <td>{{e.diateryOrientation}}</td>
+          <td>{{e.intensity}}</td>
+          <td>{{e.goal}}</td>
+          <td>{{e.workOutTime}}</td>
+          <td>{{e.wakeUpTime}}</td>
+          <td>{{e.sleepTiem}}</td>
+          <td>{{e.medicalConditon}}</td>
+          <td>{{e.allergicTo}}</td>
+          
+  
+        </tr>
+        
+        
+        </table>
+    

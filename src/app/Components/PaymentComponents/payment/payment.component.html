@@ -1,0 +1,74 @@
+<div>
+<button id="button1" >  <a [routerLink]="['/admin']">HOME</a></button>
+</div>
+<div class="panel panel-primery" >
+    <h4>Payment Table</h4>
+    <table border="2" class="table table-hover">
+        <tr style="background-color:greenyellow;">
+            <td> Id</td> 
+            <td> Payment/Amount(₹) </td>
+            <td> Discount(%) </td>
+            <td> Created_At  </td>
+            <td> Updated_At  </td>
+            <!-- <td> User Id </td> -->
+           
+            <td> Delete </td>
+            <td> Update/Modify </td>
+            
+        </tr>
+        <tr *ngFor="let p of payments">
+            <td> {{p.id}} </td> 
+            <td> {{p.payment}} </td>
+            <td> {{p.discount}} </td>
+            <td> {{p.created_At}} </td>
+            <td> {{p.updated_At}} </td>
+            <!-- <td> {{p.user.id}} </td> -->
+            
+            <td><button (click)="deletePayment(p)" class="btn btn-danger">Delete</button></td>
+            <td><button (click)="updateById(p)" class="btn btn-success">Update</button></td>
+        </tr>
+    </table>
+</div>
+
+<!-- Click here to open form: <button (click)="ngOnInit()" class="btn btn-success">Click</button> -->
+
+
+<div class="container">
+    <form #frm="ngForm" clas="form-group">
+        Payment_Id: <input #refpid="ngModel"  type="text" pattern="[0-9]{1,3}" placeholder="enter Payment id" width="20" required name="payment.id" [(ngModel)]="payment.id" class="form-control" /><br>                       
+        <div *ngIf="refpid.invalid" class="alert alert-danger">
+            Please enter payment id ..(*note : id should be number only)
+        </div>
+       Payment/Amount(₹): <input #refpayment="ngModel" type="text" placeholder="enter amount" width="20" required name="payment.payment" [(ngModel)]="payment.payment" class="form-control" /><br>
+       <div *ngIf="refpayment.invalid" class="alert alert-danger">
+        Please enter payment or amount
+         </div>
+       Discount(%): <input type="text" placeholder="0%" width="20" name="payment.discount" [(ngModel)]="payment.discount" class="form-control" value="0%"/><br>
+    
+       Created_At: <input #refcreate="ngModel" type="text" placeholder="enter date of creation(DD-MM-YYYY)" width="20" required name="payment.created_At" [(ngModel)]="payment.created_At" class="form-control" /><br>
+       <div *ngIf="refcreate.invalid" class="alert alert-danger">
+        Please enter created date
+         </div>
+       Updated_At (*Note: enter the same date of creation for first payment or first day of new plan): <input #refupdate="ngModel" type="text" placeholder="enter updated date (DD-MM-YYYY)" width="20" required name="payment.updated_At" [(ngModel)]="payment.updated_At" class="form-control" /><br>
+       <div *ngIf="refupdate.invalid" class="alert alert-danger">
+        Please enter updated date
+         </div>
+       <!-- User_Id: <input #refuid="ngModel" type="text" placeholder="enter user id" width="20" required name="payment.user.id" [(ngModel)]="payment.user.id" class="form-control" /><br>
+       <div *ngIf="refuid.invalid" class="alert alert-danger">
+        Please enter user id -->
+         <!-- </div> -->
+       <!-- Plan_Id: <input #refplid="ngModel" type="text" width="20" placeholder="enter plan id" required name="payment.plantable.planid" [(ngModel)]="payment.plantable.planid" class="form-control" /><br>
+       <div *ngIf="refplid.invalid" class="alert alert-danger">
+        Please enter plan id -->
+         <!-- </div> -->
+
+            <button (click)="addPayment()" class="btn btn-success">Save</button> &nbsp;
+            <button (click)="updatePayment()" class="btn btn-success">Update</button> &nbsp;
+            <!-- <button (click)="deletePayment()" class="btn btn-success">Delete</button> &nbsp; -->
+            <button (click)="findPaymentsById()" class="btn btn-success">Find PaymentById</button>&nbsp;
+            <!-- <button (click)="listPayments()" class="btn btn-success">List of Payment</button> -->
+
+    </form>
+    </div>
+
+

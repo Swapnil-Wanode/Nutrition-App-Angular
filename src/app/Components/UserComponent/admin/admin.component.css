@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(207, 200, 200);
+}
+
+#customer{
+    text-align: center;
+   
+}
+a{
+    color: aliceblue;
+}
+
+#signout{
+    margin-left: 90%;
+}
+#button1{
+    width: 50% ;
+}
+
+#button2{
+    width: 50% ;
+}
+
+#button3,#button4,#button5{
+    width: 50% ;
+}

@@ -1,0 +1,82 @@
+<button id="button1" >  <a [routerLink]="['/dietlist']">HOME</a></button>
+<br><br>
+<div class="panel panel-primery" style="text-align: center;">
+    <h4><b><u>Diet Plan Table</u></b></h4>
+    <table border="2" class="table table-hover">
+        <tr style="background-color:silver;">
+            <td> Plan Id</td>
+            <td> Slots </td>
+            <td> FoodType </td>
+            <td> Protien Ratio </td>
+            <td> Fat Ratio</td>
+            <td> Carbs Ratio </td>
+            <td> Total </td>
+            <td> Delete</td>
+            <td> Update</td>
+
+
+
+        </tr>
+        <tr *ngFor="let d of dietplans" style="background-color: mistyrose;">
+            <td> <b>{{d.id}} </b></td>
+            <td> <b>{{d.slots}}</b> </td>
+            <td> <b>{{d.foodType}} </b></td>
+            <td> <b>{{d.proteinRatio}}</b> </td>
+            <td> <b>{{d.fatRatio}}</b> </td>
+            <td> <b>{{d.carbsRatio}}</b> </td>
+            <td> <b>{{d.total}}</b> </td>
+            <td><button (click)="deletePlan(d)" class="btn btn-danger">Delete PLan</button></td>
+            <td> <button (click)="getPlanById(d)" class="btn btn-primary">Update PLan</button></td>
+        </tr>
+    </table>
+</div>
+<div style="text-align: center;">
+    <!-- <h2><b><u>Nutrition Plan Details</u></b></h2> -->
+</div>
+<br><br>
+<div class="container">
+    <form #frm="ngForm" class="form-group">
+        Plan_Id: <input #refpid="ngModel" type="text" placeholder="enter Plan id" width="20" required
+            name="dietplan.id" [(ngModel)]="dietplan.id" class="form-control" /><br>
+        <div *ngIf="refpid.invalid" class="alert alert-danger">
+            Please enter payment id
+        </div>
+        Name: <input #refname="ngModel" type="text" placeholder="enter Slots" width="20" required name="dietplan.slots"
+            [(ngModel)]="dietplan.slots" class="form-control" /><br>
+        <div *ngIf="refname.invalid" class="alert alert-danger">
+            Please enter Slots
+        </div>
+       Food Type: <input #refdesc="ngModel" type="text" placeholder="enter FoodType" width="20" required
+            name="dietplan.foodType" [(ngModel)]="dietplan.foodType" class="form-control" /><br>
+        <div *ngIf="refdesc.invalid" class="alert alert-danger">
+            Please enter FoodType
+        </div>
+       Protein Ratio: <input #refcreate="ngModel" type="text" placeholder="enter Protein Ratio" width="20"
+            required name="dietplan.proteinRatio" [(ngModel)]="dietplan.proteinRatio" class="form-control" /><br>
+        <div *ngIf="refcreate.invalid" class="alert alert-danger">
+            Please enter Protein Ratio
+        </div>
+        Fat Ratio: <input #refupdate="ngModel" type="text" placeholder="enter Fat Ratio " width="20"
+            required name="nutrition.fatRatio" [(ngModel)]="dietplan.fatRatio" class="form-control" /><br>
+        <div *ngIf="refupdate.invalid" class="alert alert-danger">
+            Please enter Fat Ratio
+        </div>
+        Carbs Ratio: <input #refuid="ngModel" type="text" placeholder="Enter Carbs Ratio" width="20" required name="dietplan.carbsRatio"
+            [(ngModel)]="dietplan.carbsRatio" class="form-control" /><br>
+        <div *ngIf="refuid.invalid" class="alert alert-danger">
+            Enter Carbs Ratio
+        </div>
+        Total: <input #refuid="ngModel" type="text" placeholder="Enter Total" width="20" required name="dietplan.total"
+            [(ngModel)]="dietplan.total" class="form-control" /><br>
+        <div *ngIf="refuid.invalid" class="alert alert-danger">
+            
+        </div>
+
+
+        <!-- <button (click)="fetchAllPlans()" class="btn btn-info">View All PLans</button> &nbsp; -->
+
+        <button (click)="addPlan()" class="btn btn-success">Add Plan</button> &nbsp;
+        <button (click)="updatePlan()" class="btn btn-success">Update Plan</button> &nbsp;
+
+    </form>
+</div>

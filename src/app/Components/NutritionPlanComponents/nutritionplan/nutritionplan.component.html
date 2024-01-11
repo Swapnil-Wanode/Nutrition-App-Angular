@@ -1,0 +1,77 @@
+
+
+<button id="button1" >  <a [routerLink]="['/admin']">HOME</a></button>
+<br><br>
+<div class="panel panel-primery" style="text-align: center;">
+    <h4><b><u>Nutrition Plan Table</u></b></h4>
+    <table border="2" class="table table-hover">
+        <tr style="background-color:silver;">
+            <td> PLan Id</td>
+            <td> Name </td>
+            <td> PLan Description </td>
+            <td> Created_At </td>
+            <td> Updated_At </td>
+            <td> Price </td>
+            <td> Delete </td>
+            <td> Update/Modify </td>
+
+
+        </tr>
+        <tr *ngFor="let n of nutritionplans" style="background-color: mistyrose;">
+            <td> <b>{{n.id}} </b></td>
+            <td> <b>{{n.name}}</b> </td>
+            <td> <b>{{n.planDescription}} </b></td>
+            <td> <b>{{n.created_At}}</b> </td>
+            <td> <b>{{n.updated_At}}</b> </td>
+            <td> <b>{{n.price}}</b> </td>
+            <td><button (click)="deletePlan(n)" class="btn btn-danger">Delete PLan</button></td>
+            <td> <button (click)="getPlanById(n)" class="btn btn-primary">Update PLan</button></td>
+        </tr>
+    </table>
+</div>
+
+
+<div style="text-align: center;">
+    <!-- <h2><b><u>Nutrition Plan Details</u></b></h2> -->
+</div>
+<br><br>
+<div class="container">
+    <form #frm="ngForm" class="form-group">
+        Plan_Id: <input #refpid="ngModel" type="text" pattern="[0-9]{1,3}" placeholder="enter Plan id" width="20" required
+            name="nutrition.id" [(ngModel)]="nutrition.id" class="form-control" /><br>
+        <div *ngIf="refpid.invalid" class="alert alert-danger">
+            Please enter payment id..(*note : id should be number only)
+        </div>
+        Name: <input #refname="ngModel" type="text" placeholder="enter name" width="20" required name="nutrition.name"
+            [(ngModel)]="nutrition.name" class="form-control" /><br>
+        <div *ngIf="refname.invalid" class="alert alert-danger">
+            Please enter name
+        </div>
+        Plan Description: <input #refdesc="ngModel" type="text" placeholder="enter desc" width="20" required
+            name="nutrition.planDescription" [(ngModel)]="nutrition.planDescription" class="form-control" /><br>
+        <div *ngIf="refdesc.invalid" class="alert alert-danger">
+            Please enter description
+        </div>
+        Created_At (dd-mm-yyyy): <input #refcreate="ngModel" type="text" placeholder="enter date of creation" width="20"
+            required name="nutrition.created_At" [(ngModel)]="nutrition.created_At" class="form-control" /><br>
+        <div *ngIf="refcreate.invalid" class="alert alert-danger">
+            Please enter created date
+        </div>
+        Updated_At (dd-mm-yyyy): <input #refupdate="ngModel" type="text" placeholder="enter updated date " width="20"
+            required name="nutrition.updated_At" [(ngModel)]="nutrition.updated_At" class="form-control" /><br>
+        <div *ngIf="refupdate.invalid" class="alert alert-danger">
+            Please enter updated date
+        </div>
+        Price: <input #refuid="ngModel" type="text" placeholder="enter price" width="20" required name="nutrition.price"
+            [(ngModel)]="nutrition.price" class="form-control" /><br>
+        <div *ngIf="refuid.invalid" class="alert alert-danger">
+            Enter Price
+        </div>
+
+        <!-- <button (click)="fetchAllPlans()" class="btn btn-info">View All PLans</button> &nbsp; -->
+
+        <button (click)="addPlan()" class="btn btn-success">Add Plan</button> &nbsp;
+        <button (click)="updatePlan()" class="btn btn-success">Update Plan</button> &nbsp;
+
+    </form>
+</div>

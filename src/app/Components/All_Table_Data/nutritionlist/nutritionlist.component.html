@@ -1,0 +1,30 @@
+
+<button id="button1" >  <a [routerLink]="['/customersection']">HOME</a></button>
+<br><br>
+<div class="panel panel-primery" style="text-align: center;">
+    <h4><b><u>Nutrition PLan Table</u></b></h4>
+    <table border="2" class="table table-hover">
+        <tr style="background-color:silver;">
+            <td> PLan Id</td>
+            <td> Name </td>
+            <td> PLan Description </td>
+            <td> Created_At </td>
+            <td> Updated_At </td>
+            <td> Price </td>
+            <!-- <td> Delete </td>
+            <td> Update/Modify </td> -->
+
+
+        </tr>
+        <tr *ngFor="let n of nutritionplans" style="background-color: mistyrose;">
+            <td> <b>{{n.id}} </b></td>
+            <td> <b>{{n.name}}</b> </td>
+            <td> <b>{{n.planDescription}} </b></td>
+            <td> <b>{{n.created_At}}</b> </td>
+            <td> <b>{{n.updated_At}}</b> </td>
+            <td> <b>{{n.price}}</b> </td>
+            <!-- <td><button (click)="deletePlan(n)" class="btn btn-danger">Delete PLan</button></td>
+            <td> <button (click)="getPlanById(n)" class="btn btn-primary">Update PLan</button></td> -->
+        </tr>
+    </table>
+</div>

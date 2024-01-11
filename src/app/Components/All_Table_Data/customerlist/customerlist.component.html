@@ -1,0 +1,139 @@
+      
+<button id="button1" >  <a [routerLink]="['/customersection']">HOME</a></button><br>
+
+    <table border="2" class="table table-hover" >
+        <tr style="background-color: aqua;">
+          <td>CustomerID</td>
+          <td>FirstName</td>
+          <td>LastName</td>
+          <td>Email</td>
+          <td>DOB</td>
+          <td>U_ID</td>
+          <!-- <td>R_ID</td> -->
+          <td>Gender</td>
+          <td>photo</td>
+          <td>role</td>
+          <td>status</td>
+          <td>weight</td>
+          <td>height</td>
+          <td>diateryOrientation</td>
+          <td>intensity</td>
+          <td>goal</td>
+          <td>workOutTime</td>
+          <td>wakeUpTime</td>
+          <td>sleepTiem</td>
+          <td>medicalConditon</td>
+          <td>allergicTo</td>
+        </tr>
+        <tr *ngFor="let e of customers" style="background-color: thistle;">
+        
+          <td>{{e.id}}</td>
+          <td>{{e.firstName}}</td>
+          <td>{{e.lastName}}</td>
+          <td>{{e.email}}</td>
+          <td>{{e.dateOfBirth}}</td>
+          <td>{{e.u_id}}</td>
+          <!-- <td>{{e.r_id}}</td> -->
+          <td>{{e.gender}}</td>
+          <td>{{e.photo}}</td>
+          <td>{{e.role}}</td>
+          <td>{{e.status}}</td>
+          <td>{{e.weight}}</td>
+          <td>{{e.height}}</td>
+          <td>{{e.diateryOrientation}}</td>
+          <td>{{e.intensity}}</td>
+          <td>{{e.goal}}</td>
+          <td>{{e.workOutTime}}</td>
+          <td>{{e.wakeUpTime}}</td>
+          <td>{{e.sleepTiem}}</td>
+          <td>{{e.medicalConditon}}</td>
+          <td>{{e.allergicTo}}</td>
+          
+  
+        </tr>
+        
+        
+        </table>
+        
+        
+        <h4><u>Customer Details</u></h4><br>
+        <form class="mx-1 mx-md-4" class="container">
+       
+          
+        Enter your Id to Update details:  <button (click)="modifyCustomer()" class="btn btn-primary" >Update</button>&nbsp;&nbsp;
+          
+        
+          <br><br>
+        
+        CustomerID : <input type="text" width="20" placeholder="enter Customer id" name="customer.id" [(ngModel)]="customer.id"/>
+                                          
+     <br><br>
+       
+        FirstName  : <input type="text" width="20" placeholder="firstname" name="customer.fname" [(ngModel)]="customer.firstName" />
+      <br><br>
+    
+          LastName   : <input type="text" width="20" placeholder="lastname" name="customer.lastName" [(ngModel)]="customer.lastName" />
+        <br><br>
+        
+          Email      : <input type="text" width="20" placeholder="email" name="customer.email" [(ngModel)]="customer.email"/>
+        
+                                              
+       <br><br>
+      
+          DOB        : <input type="text" width="20" placeholder="dob" name="customer.dob" [(ngModel)]="customer.dateOfBirth"  />
+    
+         <br><br>
+    
+          U_ID       : <input type="text" width="20" placeholder="uid" name="customer.uid" [(ngModel)]="customer.u_id"  />
+       
+          <br><br>
+          <!-- D_ID       : <input type="text" width="20" placeholder="did" name="customer.did" [(ngModel)]="customer.d_id" />
+          <br><br> -->
+       
+          Gender  : <input type="text" width="20" placeholder="Gender" name="customer.gender" [(ngModel)]="customer.gender" />
+          <br><br>
+       
+          Photo  : <input type="text" width="20" placeholder="photo" name="customer.photo" [(ngModel)]="customer.photo" />
+          <br><br>
+       
+          role  : <input type="text" width="20" placeholder="role" name="customer.role" [(ngModel)]="customer.role" />
+          <br><br>
+       
+          status  : <input type="text" width="20" placeholder="status" name="customer.status" [(ngModel)]="customer.status" />
+          <br><br>
+       
+          weight  : <input type="text" width="20" placeholder="weight" name="customer.weight" [(ngModel)]="customer.weight" />
+          <br><br>
+       
+          height  : <input type="text" width="20" placeholder="height" name="customer.height" [(ngModel)]="customer.height" />
+          <br><br>
+       
+          Diatery Orientation  : <input type="text" width="20" placeholder="Diatery Oriemtation" name="customer.diateryOrientation" [(ngModel)]="customer.diateryOrientation" />
+          <br><br>
+       
+          <!-- Intensity  : <input type="text" width="20" placeholder="firstname" name="customer.intensity" [(ngModel)]="customer.intensity" />
+          <br><br> -->
+       
+          Goal  : <input type="text" width="20" placeholder="enter goal" name="customer.goal" [(ngModel)]="customer.goal" />                
+
+        Work Out Time  : <input type="text" width="20" placeholder="work out time" name="customer.workOutTime" [(ngModel)]="customer.workOutTime" />
+        <br><br>
+        Intensity  : <input type="text" width="20" placeholder="intensity" name="customer.intensity" [(ngModel)]="customer.intensity" />
+        <br><br>
+        Sleep Time  : <input type="text" width="20" placeholder="sleep Time" name="customer.sleepTiem" [(ngModel)]="customer.sleepTiem" />
+        <br><br>
+        Medical Condition  : <input type="text" width="20" placeholder="Medical Conditon" name="customer.medicalConditon" [(ngModel)]="customer.medicalConditon" />
+        <br><br>
+        Allergic To  : <input type="text" width="20" placeholder="Allergic to.." name="customer.allergicTo" [(ngModel)]="customer.allergicTo" />
+        <br><br>
+        <!-- R_ID       : <input type="text" width="20" placeholder="uid" name="customer.uid" [(ngModel)]="customer.r_id"  /> -->
+       
+        <br><br>
+        <br><br><br><br><br><br>
+        
+        
+        </form>
+
+
+
+    

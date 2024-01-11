@@ -1,0 +1,41 @@
+
+<h3>Please Complete the procedure for furthur action:</h3>
+
+<div class="container">
+    <form #frm="ngForm" clas="form-group">
+        <!-- Payment_Id: <input #refpid="ngModel" type="text" placeholder="enter Payment id" width="20" required name="payment.id" [(ngModel)]="payment.id" class="form-control" /><br>                       
+        <div *ngIf="refpid.invalid" class="alert alert-danger">
+            Please enter payment id
+        </div> -->
+       Payment/Amount(₹): <input #refpayment="ngModel" type="text" placeholder="enter amount" width="20" required name="payment.payment" [(ngModel)]="payment.payment" class="form-control" /><br>
+       <div *ngIf="refpayment.invalid" class="alert alert-danger">
+        Please enter payment or amount
+         </div>
+       Discount(%): <input type="text" class="fixed-value" placeholder="0%" width="20" name="payment.discount" [(ngModel)]="payment.discount" class="form-control" value="0" readonly /><br>
+    
+       Created_At: <input #refcreate="ngModel" type="text" placeholder="enter date of creation(DD-MM-YYYY)" width="20" required name="payment.created_At" [(ngModel)]="payment.created_At" class="form-control" /><br>
+       <div *ngIf="refcreate.invalid" class="alert alert-danger">
+        Please enter created date
+         </div>
+       Updated_At (*Note: enter the same date of creation for first payment or first day of new plan): <input #refupdate="ngModel" type="text" placeholder="enter updated date (DD-MM-YYYY)" width="20" required name="payment.updated_At" [(ngModel)]="payment.updated_At" class="form-control" /><br>
+       <div *ngIf="refupdate.invalid" class="alert alert-danger">
+        Please enter updated date
+         </div>
+       <!-- User_Id: <input #refuid="ngModel" type="text" placeholder="enter user id" width="20" required name="payment.user.id" [(ngModel)]="payment.user.id" class="form-control" /><br>
+       <div *ngIf="refuid.invalid" class="alert alert-danger">
+        Please enter user id -->
+         <!-- </div> -->
+       <!-- Plan_Id: <input #refplid="ngModel" type="text" width="20" placeholder="enter plan id" required name="payment.plantable.planid" [(ngModel)]="payment.plantable.planid" class="form-control" /><br>
+       <div *ngIf="refplid.invalid" class="alert alert-danger">
+        Please enter plan id -->
+         <!-- </div> -->
+
+            <button (click)="addPayment()" class="btn btn-success">Save</button> &nbsp;
+            <!-- <button (click)="updatePayment()" class="btn btn-success">Update</button> &nbsp; -->
+            <!-- <button (click)="deletePayment()" class="btn btn-success">Delete</button> &nbsp; -->
+            <!-- <button (click)="findPaymentsById()" class="btn btn-success">Find PaymentById</button>&nbsp; -->
+            <!-- <button (click)="listPayments()" class="btn btn-success">List of Payment</button> -->
+
+    </form>
+    </div>
+

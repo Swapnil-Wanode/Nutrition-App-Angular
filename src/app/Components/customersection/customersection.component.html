@@ -1,0 +1,20 @@
+<body>
+
+
+<div id="signout">
+    <button class="btn btn-success" (click)="signOut()">LogOut</button>
+  </div>
+    
+<div id="customer">
+    
+        <h3>List of Tables</h3> 
+        
+           <button id="button1" class="btn btn-success">  <a [routerLink]="['/customerlist']">View List of Customer</a></button><br><br>
+           <button id="button2" class="btn btn-success">  <a [routerLink]="['/paymentlist']">View List of Payment</a></button><br><br>
+           <button id="button3" class="btn btn-success">  <a [routerLink]="['/weightloglist']">View List of Weight Log</a></button><br><br>
+           <button id="button4" class="btn btn-success">  <a [routerLink]="['/nutritionlist']">View List of Nutrition</a></button><br><br>
+           <button id="button5" class="btn btn-success">  <a [routerLink]="['/dietlist']">View List of Diet</a></button><br><br>
+        
+</div>  
+        
+</body>

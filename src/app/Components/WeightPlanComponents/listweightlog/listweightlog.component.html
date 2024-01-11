@@ -1,0 +1,28 @@
+
+To Edit table click on button<button id="button5" >  <a [routerLink]="['/weightlog']">Click</a></button><br><br>
+<br><br>
+
+
+<div style="text-align:center;"  class="panel panel-primery"  >
+    <h2><u>WeightLog Details</u></h2><br>
+  <table border="10" style="margin:auto" class="table table-hover" >
+  <tr style="background-color:greenyellow;">
+
+            <td> Id</td> 
+            <td> Weight </td>
+            <td> Created_At </td>
+            <td> Updated_At </td>
+            <td> User Id </td>
+           
+
+  </tr>
+  <tr *ngFor="let p of weightLogs">
+    <td> {{p.id}} </td> 
+    <td> {{p.weight}} </td>
+    <td> {{p.created_At}} </td>
+    <td> {{p.updated_At}} </td>
+    <td> {{p.userId}} </td>
+    
+</tr>
+  </table>
+  </div>
